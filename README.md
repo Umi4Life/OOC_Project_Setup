@@ -1,37 +1,4 @@
-# SpringVue Starter
 
-> A Spring-Boot Vue.js project
-
-# Installation
-
-This app uses Vue.js, Spring Boot, Git, Npm and Webpack
-
-* [vue](https://vuejs.org/)
-* [spring boot](https://spring.io/guides/gs/spring-boot/)
-* [webpack](https://webpack.js.org/)
-* [git](https://git-scm.com/)
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-# Folders and Files
-* build: Webpack specific folder lets us setup the build environment using files such as running ```npm build [dev|prod]```
-   * build.js
-   * dev-client.js
-   * dev-server.js
-   * utils.js
-   * webpack.base.conf.js
-   * webpack.dev.conf.js
-   * webpack.prod.conf.js
-* config: Configuration for environments
-   * dev.env.js
-   * index.js
-   * prod.env.js
-   * test.env.js
-* src: Where are source code lives
-* .babelrc: Babel specific used in webpack to turn es2015/es2016 code to ES5 code for older browsers to use
-* .gitignore: Specify files in here for git to ignore
-* package.json: Frontend dependency manager similar to pom.xml but for managing javascript apps
-* pom.xml: Java backend dependency management
 
 ## NPM Registry Setup
 ```
