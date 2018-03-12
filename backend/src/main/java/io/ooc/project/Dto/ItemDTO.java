@@ -1,6 +1,7 @@
 package io.ooc.project.Dto;
 
-import Model.*;
+import io.ooc.project.Model.*;
+import io.ooc.project.Model.Category;
 
 import java.util.List;
 
