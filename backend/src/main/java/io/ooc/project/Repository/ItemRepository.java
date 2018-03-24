@@ -1,5 +1,6 @@
 package io.ooc.project.Repository;
 
+import io.ooc.project.Model.Category;
 import io.ooc.project.Model.Item;
 import io.ooc.project.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,5 +19,6 @@ import java.util.List;
         @Override
         List<Item> findAll();
         Item findById(int id);
+        List<Item> findProductsByCategory(Category category);
 
 }

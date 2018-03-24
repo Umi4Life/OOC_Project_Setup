@@ -11,5 +11,6 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
     @Override
     List<Role> findAll();
     List<Role> findRoleByUser(User user);
+    Role findById(int id);
 
 }

@@ -26,13 +26,14 @@ public class ItemServiceImpl implements ItemServiceTest {
 
     @Override
     public List<Item> getAll(Integer categoryId) {
-        return itemRepository.findAll(categoryId);
-    } // two-step
+        Category cat = categoryRepository.findById(categoryId);
+        return itemRepository.findProductsByCategory(cat);
+    }
 
     @Override
     public List<Item> getAllItem(Integer userId) {
-
-        return itemRepository.findAll(userId);
+        User user = userRepository.findById(userId);
+        return itemRepository.findProductsByUser(user);
     }
 
     @Override
@@ -42,12 +43,12 @@ public class ItemServiceImpl implements ItemServiceTest {
 
     @Override
     public Item get(Integer itemId) {
-        return itemRepository.findById(itemId);  //?? getOne?
+        return itemRepository.findById(itemId);
     }
 
     @Override
     public void add(Integer categoryId, Item item, MultipartFile file) throws IOException {
-        // original file, this creates new object
+        // original file, this creates new object ??
         item.setItemImage(file.getBytes());
         item.setItemId(item.getItemId());
         item.setItemName(item.getItemName());
@@ -56,14 +57,15 @@ public class ItemServiceImpl implements ItemServiceTest {
 
         itemRepository.save(item);
 
-        // TO implement: category add item
+        Category cat = categoryRepository.findById(categoryId);
+        cat.getItem().add(item);
 
+        categoryRepository.save(cat);
     }
 
     @Override
     public void saveItem(Item item) { 	// To save item  //
         itemRepository.save(item);
-
     }
 
     @Override
@@ -72,12 +74,12 @@ public class ItemServiceImpl implements ItemServiceTest {
 
         User user = userRepository.findById(userId);
         user.getItem().add(item);
-
     }
 
     @Override
     public void removeAllItems(Integer userId) {
         User user = userRepository.findById(userId);
+        user.getItem().clear();
     }
 
     @Override
@@ -88,6 +90,6 @@ public class ItemServiceImpl implements ItemServiceTest {
 
     @Override
     public void edit(Item item, MultipartFile file) {
-
+        itemRepository.save(item); // this is what original method does...
     }
 }
