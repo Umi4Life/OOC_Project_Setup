@@ -19,7 +19,7 @@ import java.io.IOException;
 public class ImageController {
 	
 	@Resource(name="categoryService")
-	private CategoryService categoryService;
+	private CategoryServiceImpl categoryService;
 	
 	@Resource(name="itemService")
 	private ItemService itemService;

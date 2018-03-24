@@ -46,10 +46,10 @@ public class User implements Serializable{
 	
 	
 	
-	//-----------------------------user billable mapping---------------------------------------------//
+	//-----------------------------user Billable mapping---------------------------------------------//
 	/*
 	@OneToMany(mappedBy="user",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	private Set<billable> billable;
+	private Set<Billable> Billable;
 	*/
 	
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
@@ -58,7 +58,7 @@ public class User implements Serializable{
 			joinColumns = @JoinColumn(name="USER_ID"),
 			inverseJoinColumns = @JoinColumn(name="BILLABLE_ID")
 	)
-	private Set<billable> billable;
+	private Set<Billable> Billable;
 	//-------------------------------------------------------------------------------------------------//
 	
 	
@@ -111,12 +111,12 @@ public class User implements Serializable{
 		this.item = item;
 	}
 	
-	public Set<billable> getBillable() {
-		return billable;
+	public Set<Billable> getBillable() {
+		return Billable;
 	}
 
-	public void setBillable(Set<billable> billable) {
-		this.billable = billable;
+	public void setBillable(Set<Billable> Billable) {
+		this.Billable = Billable;
 	}
 	
 }

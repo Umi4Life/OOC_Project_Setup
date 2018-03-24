@@ -43,14 +43,14 @@ public class Item implements Serializable{
 	private User user;
 	//--------------------------------------------------------------------------------------------------------//
 	
-	//-------------------------------------item mapped to billable--------------------------------------------//
+	//-------------------------------------item mapped to Billable--------------------------------------------//
 	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinTable(
 			name="BillableItem",
 			joinColumns = @JoinColumn(name = "ITEM_ID"),
 			inverseJoinColumns = @JoinColumn(name="BILLABLE_ID")
 	)
-	public billable billable;
+	public Billable Billable;
 	//--------------------------------------------------------------------------------------------------------//
 	
 	public Integer getItemId() {
@@ -109,12 +109,12 @@ public class Item implements Serializable{
 		this.user = user;
 	}
 	
-	public billable getBillable() {
-		return billable;
+	public Billable getBillable() {
+		return Billable;
 	}
 
-	public void setBillable(billable billable) {
-		this.billable = billable;
+	public void setBillable(Billable Billable) {
+		this.Billable = Billable;
 	}
 
 }

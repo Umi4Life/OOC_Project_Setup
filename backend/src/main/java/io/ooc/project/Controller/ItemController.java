@@ -173,7 +173,7 @@ public class ItemController {
 		model.addAttribute("CurrentUser",user);
 		model.addAttribute("CurrentItems",items);
 		model.addAttribute("Total",sum);
-		model.addAttribute("billableAttribute",new billable());
+		model.addAttribute("billableAttribute",new Billable());
 		
 		return "CartRecord";
 		
@@ -184,7 +184,7 @@ public class ItemController {
 	 @RequestMapping(value="/checkOut",method = RequestMethod.POST)
 	    public String checkOut(@RequestParam("id")String userName, @RequestParam("rName")String rName, @RequestParam("bAddress")String bAddress, Model model){
 		 
-		 billable bill = new billable();
+		 Billable bill = new Billable();
 		 bill.setBillableName(rName);
 		 bill.setBillableAddress(bAddress);
 		

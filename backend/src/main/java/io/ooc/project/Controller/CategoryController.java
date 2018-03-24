@@ -20,7 +20,7 @@ import java.util.List;
 public class CategoryController {
 	
 	@Resource(name="categoryService")
-	private CategoryService categoryService;
+	private CategoryServiceImpl categoryService;
 	
 	@Resource(name="itemService")
 	private ItemService itemService;

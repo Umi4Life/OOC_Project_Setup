@@ -5,8 +5,8 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-@Table(name="billable")
-public class billable implements Serializable{
+@Table(name="Billable")
+public class Billable implements Serializable{
 	
 	@Id
 	@Column(name="billableId")
@@ -23,7 +23,7 @@ public class billable implements Serializable{
 	private User user;
 	*/
 	
-	//------------------------------------------------billable mapped to User-------------------------------------------//
+	//------------------------------------------------Billable mapped to User-------------------------------------------//
 	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinTable(
 			name="UserBillable",
@@ -48,10 +48,10 @@ public class billable implements Serializable{
 	
 	
 	
-	//--------------------------billable mapped to item---------------------------------------------//
+	//--------------------------Billable mapped to item---------------------------------------------//
 	
 	/*
-	@OneToMany(mappedBy="billable",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="Billable",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	private Set<Item> item;
 	*/
 	
