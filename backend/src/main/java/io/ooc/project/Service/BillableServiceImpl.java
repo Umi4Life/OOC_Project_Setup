@@ -1,41 +1,48 @@
 package io.ooc.project.Service;
 
-import io.ooc.project.Model.billable;
+import io.ooc.project.Model.Billable;
+import io.ooc.project.Repository.BillableRepository;
+import io.ooc.project.Repository.CategoryRepository;
+import io.ooc.project.Repository.ItemRepository;
+import io.ooc.project.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * Created by Havensbee on 3/19/18.
  */
-public class BillableServiceImpl implements BillableServiceTest {
+@Service("billableService")
+@Transactional
+public class BillableServiceImpl implements BillableServiceInterface {
+    @Autowired
+    private BillableRepository billableRepository;
 
     @Override
-    public List<billable> getAll() {
-        return null;
+    public List<Billable> getAll() {
+        return billableRepository.findAll();
     }
 
     @Override
-    public billable get(Integer billableId) {
-        return null;
+    public Billable get(Integer billableId) {
+        return billableRepository.findByBillableId(billableId);
     }
 
     @Override
-    public billable getBillableByName(String billableName) {
-        return null;
+    public Billable getBillableByName(String billableName) {
+        return billableRepository.findByBillableName(billableName);
     }
 
     @Override
-    public void add(billable bill) {
-
+    public void add(Billable bill) {
+        billableRepository.save(bill);
     }
 
     @Override
     public void delete(Integer billableId) {
-
+        billableRepository.delete((long)billableId);
     }
 
-    @Override
-    public void edit(billable bill) {
-
-    }
 }

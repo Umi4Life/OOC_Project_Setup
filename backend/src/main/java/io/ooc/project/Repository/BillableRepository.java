@@ -1,11 +1,17 @@
 package io.ooc.project.Repository;
 
-import io.ooc.project.Model.Category;
-import io.ooc.project.Model.billable;
+import io.ooc.project.Model.Billable;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 /**
  * Created by Havensbee on 3/19/18.
  */
-public interface BillableRepository extends JpaRepository<billable, Long>  {
+public interface BillableRepository extends JpaRepository<Billable, Long>  {
+    Billable findByBillableName(String billableName);
+    Billable findByBillableId(Integer billableId);
+    @Override
+    List<Billable> findAll();
+
 }
