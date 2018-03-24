@@ -25,7 +25,7 @@ import java.util.Set;
 public class ItemController {
 	
 	@Resource(name="categoryService")
-	private CategoryService categoryService;
+	private CategoryServiceImpl categoryService;
 	
 	@Resource(name="itemService")
 	private ItemService itemService;
@@ -34,7 +34,7 @@ public class ItemController {
 	private UserService userService;
 	
 	@Resource(name="billableService")
-	private BillableService billableService;
+	private BillableServiceImpl billableService;
 	
 	//---------------------------- to list all the items(GET)-------------------------------------------//
 	@RequestMapping(value = "/list", method = RequestMethod.GET)

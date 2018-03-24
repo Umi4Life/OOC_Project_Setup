@@ -16,8 +16,8 @@ import java.util.List;
 @Service("itemService")
 @Transactional
 public class ItemService {
-	
-	@Resource(name="sessionFactory")
+
+
 	private SessionFactory sessionFactory;
 	
 	public List<Item> getAll(Integer categoryId){

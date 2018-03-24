@@ -22,40 +22,10 @@
 
     <properties>
         <main.basedir>${project.basedir}</main.basedir>
+        <!-- The main class to start by executing java -jar -->
+        <start-class>backend.src.main.java.io.ooc.project.Application</start-class>
+        <!--/backend/src/main/java/io/ooc/project/Application.java -->
     </properties>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <!-- Set a compiler level -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <!--<configuration>-->
-                <!--<source>${jdk.version}</source>-->
-                <!--<target>${jdk.version}</target>-->
-                <!--</configuration>-->
-            </plugin>
 
-            <!-- Make this jar executable -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.4.1</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>io.ooc.project.</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
