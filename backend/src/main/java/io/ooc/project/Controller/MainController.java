@@ -23,10 +23,10 @@ import java.util.Set;
 public class MainController {
 	
 	@Resource(name="userService")
-	private UserService userService; 
+	private UserServiceImpl userService;
 	
 	@Resource(name="roleService")
-	private RoleService roleService;
+	private RoleServiceImpl roleService;
 	
 	@RequestMapping(value="/login")
 	public String GetFront(Model model){

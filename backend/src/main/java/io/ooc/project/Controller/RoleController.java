@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 public class RoleController {
 	
 	@Resource(name="roleService")
-	private RoleService roleService;
+	private RoleServiceImpl roleService;
 	
 	@RequestMapping(value="/add",method= RequestMethod.GET)
 	public String getAdd(@RequestParam("id")Integer userId, Model model){

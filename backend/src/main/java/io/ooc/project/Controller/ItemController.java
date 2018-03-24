@@ -28,10 +28,10 @@ public class ItemController {
 	private CategoryServiceImpl categoryService;
 	
 	@Resource(name="itemService")
-	private ItemService itemService;
+	private ItemServiceImpl itemService;
 	
 	@Resource(name="userService")
-	private UserService userService;
+	private UserServiceImpl userService;
 	
 	@Resource(name="billableService")
 	private BillableServiceImpl billableService;
