@@ -12,8 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service("userService")
-@Transactional
+
 public class UserService {
 	
 	@Resource(name="sessionFactory")

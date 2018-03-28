@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -18,12 +19,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
-	
-	@Resource(name="categoryService")
-	private CategoryServiceImpl categoryService;
-	
-	@Resource(name="itemService")
-	private ItemService itemService;
+
+    @Autowired
+	private CategoryServiceTest categoryService;
+    @Autowired
+	private ItemServiceTest itemService;
+
     
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
     public String getRecords(Model model) {

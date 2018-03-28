@@ -9,11 +9,14 @@ import io.ooc.project.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
 
+@Service("itemService")
+@Transactional
 public class ItemServiceImpl implements ItemServiceTest {
 
     @Autowired
@@ -26,14 +29,14 @@ public class ItemServiceImpl implements ItemServiceTest {
 
     @Override
     public List<Item> getAll(Integer categoryId) {
-        Category cat = categoryRepository.findById(categoryId);
+        Category cat = categoryRepository.getCategoryByCategoryId(categoryId);
         return itemRepository.findProductsByCategory(cat);
     }
 
     @Override
     public List<Item> getAllItem(Integer userId) {
-        User user = userRepository.findById(userId);
-        return itemRepository.findProductsByUser(user);
+        User user = userRepository.findUserByUserId(userId);
+        return itemRepository.findItemByUser(user);
     }
 
     @Override
@@ -43,7 +46,7 @@ public class ItemServiceImpl implements ItemServiceTest {
 
     @Override
     public Item get(Integer itemId) {
-        return itemRepository.findById(itemId);
+        return itemRepository.findItemByItemId(itemId);
     }
 
     @Override
@@ -57,7 +60,7 @@ public class ItemServiceImpl implements ItemServiceTest {
 
         itemRepository.save(item);
 
-        Category cat = categoryRepository.findById(categoryId);
+        Category cat = categoryRepository.getCategoryByCategoryId(categoryId);
         cat.getItem().add(item);
 
         categoryRepository.save(cat);
@@ -70,21 +73,21 @@ public class ItemServiceImpl implements ItemServiceTest {
 
     @Override
     public void addItemToUser(Integer userId, Integer itemId) {
-        Item item = itemRepository.findById(itemId);
+        Item item = itemRepository.findItemByItemId(itemId);
 
-        User user = userRepository.findById(userId);
+        User user = userRepository.findUserByUserId(userId);
         user.getItem().add(item);
     }
 
     @Override
     public void removeAllItems(Integer userId) {
-        User user = userRepository.findById(userId);
+        User user = userRepository.findUserByUserId(userId);
         user.getItem().clear();
     }
 
     @Override
     public void delete(Integer itemId) {
-        Item item = itemRepository.findById(itemId);
+        Item item = itemRepository.findItemByItemId(itemId);
         itemRepository.delete(item);
     }
 

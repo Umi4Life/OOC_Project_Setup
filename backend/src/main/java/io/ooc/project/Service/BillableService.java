@@ -1,14 +1,16 @@
-//package io.ooc.project.Service;
-//
-//import io.ooc.project.Model.*;
-//import org.hibernate.Criteria;
-//import org.hibernate.Query;
-//import org.hibernate.Session;
-//import org.hibernate.criterion.Restrictions;
-//import org.springframework.stereotype.Service;
-//import org.springframework.transaction.annotation.Transactional;
-//
-//import java.util.List;
+package io.ooc.project.Service;
+
+import io.ooc.project.Model.*;
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+
 //
 //@Service("billableService")
 //@Transactional

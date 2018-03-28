@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -23,18 +24,18 @@ import java.util.Set;
 @Controller
 @RequestMapping("/item")
 public class ItemController {
-	
-	@Resource(name="categoryService")
-	private CategoryServiceImpl categoryService;
-	
-	@Resource(name="itemService")
-	private ItemServiceImpl itemService;
-	
-	@Resource(name="userService")
-	private UserServiceImpl userService;
-	
-	@Resource(name="billableService")
-	private BillableServiceImpl billableService;
+
+	@Autowired
+	private CategoryServiceTest categoryService;
+
+	@Autowired
+	private ItemServiceTest itemService;
+
+    @Autowired
+	private UserServiceTest userService;
+
+    @Autowired
+	private BillableServiceInterface billableService;
 	
 	//---------------------------- to list all the items(GET)-------------------------------------------//
 	@RequestMapping(value = "/list", method = RequestMethod.GET)

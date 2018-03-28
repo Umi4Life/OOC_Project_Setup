@@ -23,7 +23,7 @@
     <properties>
         <main.basedir>${project.basedir}</main.basedir>
         <!-- The main class to start by executing java -jar -->
-        <start-class>backend.src.main.java.io.ooc.project.Application</start-class>
+        <start-class>io.ooc.project.Application</start-class>
         <!--/backend/src/main/java/io/ooc/project/Application.java -->
     </properties>
 

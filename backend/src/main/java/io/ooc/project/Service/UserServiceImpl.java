@@ -5,9 +5,13 @@ import io.ooc.project.Repository.UserRepository;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service("userService")
+@Transactional
 public class UserServiceImpl implements UserServiceTest {
     @Autowired
     private UserRepository userRepository;
@@ -19,17 +23,17 @@ public class UserServiceImpl implements UserServiceTest {
 
     @Override
     public User get(Integer userId) {
-        return userRepository.findById(userId);
+        return userRepository.findUserByUserId(userId);
     }
 
     @Override
     public User getuserByName(String userName) {
-        return userRepository.findByUsername(userName);
+        return userRepository.findUserByUserName(userName);
     }
 
     @Override
     public boolean validate(String userName, String password) {
-        Object result = userRepository.findByUsername(userName);
+        Object result = userRepository.findUserByUserName(userName);
         if(result!=null){
             User user = (User) result;
             if(user.getPassword().equals(password)){
@@ -46,7 +50,7 @@ public class UserServiceImpl implements UserServiceTest {
 
     @Override
     public void delete(Integer userId) {
-        User user = userRepository.findById(userId);
+        User user = userRepository.findUserByUserId(userId);
         userRepository.delete(user);
     }
 

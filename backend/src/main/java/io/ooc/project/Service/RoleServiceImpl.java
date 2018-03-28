@@ -6,9 +6,13 @@ import io.ooc.project.Model.User;
 import io.ooc.project.Repository.RoleRepository;
 import io.ooc.project.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service("roleService")
+@Transactional
 public class RoleServiceImpl implements RoleServiceTest {
 
     @Autowired
@@ -18,7 +22,7 @@ public class RoleServiceImpl implements RoleServiceTest {
 
     @Override
     public List<Role> getAll(Integer userId) {
-        User user = userRepository.findById(userId);
+        User user = userRepository.findUserByUserId(userId);
         return roleRepository.findRoleByUser(user);
     }
 
@@ -29,18 +33,18 @@ public class RoleServiceImpl implements RoleServiceTest {
 
     @Override
     public Role get(Integer roleId) {
-        return roleRepository.findById(roleId);
+        return roleRepository.findRoleByRoleId(roleId);
     }
 
     @Override
     public void add(Integer userId, Role role) {
-        User user = userRepository.findById(userId);
+        User user = userRepository.findUserByUserId(userId);
         user.getRole().add(role);
     }
 
     @Override
     public void delete(Integer roleId) {
-        Role role = roleRepository.findById(roleId);
+        Role role = roleRepository.findRoleByRoleId(roleId);
         roleRepository.delete(role);
     }
 

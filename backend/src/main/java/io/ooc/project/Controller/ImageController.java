@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -17,12 +18,12 @@ import java.io.IOException;
 @Controller
 @RequestMapping("/myImage")
 public class ImageController {
-	
-	@Resource(name="categoryService")
-	private CategoryServiceImpl categoryService;
-	
-	@Resource(name="itemService")
-	private ItemService itemService;
+
+	@Autowired
+	private CategoryServiceTest categoryService;
+
+	@Autowired
+	private ItemServiceTest itemService;
 	
 	private final int DEFAULT_BUFFER_SIZE = 10240;
 	

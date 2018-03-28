@@ -11,8 +11,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service("roleService")
-@Transactional
+
 public class RoleService {
 	
 	@Resource(name="sessionFactory")
