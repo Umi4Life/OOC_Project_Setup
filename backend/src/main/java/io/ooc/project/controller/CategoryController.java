@@ -1,9 +1,9 @@
-package io.ooc.project.Controller;
+package io.ooc.project.controller;
 
-import io.ooc.project.Dto.*;
-import io.ooc.project.Model.*;
-import io.ooc.project.Service.*;
-import io.ooc.project.Model.Category;
+import io.ooc.project.dto.*;
+import io.ooc.project.model.*;
+import io.ooc.project.service.*;
+import io.ooc.project.model.Category;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,9 +21,9 @@ import java.util.List;
 public class CategoryController {
 
     @Autowired
-	private CategoryServiceTest categoryService;
+	private CategoryService categoryService;
     @Autowired
-	private ItemServiceTest itemService;
+	private ItemService itemService;
 
     
 	@RequestMapping(value = "/list", method = RequestMethod.GET)

@@ -1,8 +1,8 @@
-package io.ooc.project.Controller;
+package io.ooc.project.controller;
 
-import io.ooc.project.Dto.*;
-import io.ooc.project.Model.*;
-import io.ooc.project.Service.*;
+import io.ooc.project.dto.*;
+import io.ooc.project.model.*;
+import io.ooc.project.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -26,16 +25,16 @@ import java.util.Set;
 public class ItemController {
 
 	@Autowired
-	private CategoryServiceTest categoryService;
+	private CategoryService categoryService;
 
 	@Autowired
-	private ItemServiceTest itemService;
+	private ItemService itemService;
 
     @Autowired
-	private UserServiceTest userService;
+	private UserService userService;
 
     @Autowired
-	private BillableServiceInterface billableService;
+	private BillableService billableService;
 	
 	//---------------------------- to list all the items(GET)-------------------------------------------//
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -154,7 +153,7 @@ public class ItemController {
 	@RequestMapping(value="/addToUser")
 	public String getAddToUser(@RequestParam("bid")String userName, @RequestParam("cid")Integer itemId, Model model){
 		
-		User user = userService.getuserByName(userName);
+		User user = userService.getUserByName(userName);
 		Item item = itemService.get(itemId);
 		
 		itemService.addItemToUser(user.getUserId(),item.getItemId());
@@ -189,7 +188,7 @@ public class ItemController {
 		 bill.setBillableName(rName);
 		 bill.setBillableAddress(bAddress);
 		
-		 User user = userService.getuserByName(userName);
+		 User user = userService.getUserByName(userName);
 		 
 		 bill.setUser(user);
 		 

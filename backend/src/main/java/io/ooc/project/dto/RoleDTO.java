@@ -1,7 +1,6 @@
-package io.ooc.project.Dto;
+package io.ooc.project.dto;
 
-import io.ooc.project.Model.*;
-import io.ooc.project.Model.User;
+import io.ooc.project.model.*;
 
 import java.util.List;
 

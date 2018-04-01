@@ -1,19 +1,19 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
-import io.ooc.project.Model.Billable;
+import io.ooc.project.model.Billable;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public interface BillableServiceInterface {
-    public List<Billable> getAll();
+public interface BillableService {
+    List<Billable> getAll();
 
-    public Billable get(Integer billableId);
+    Billable get(Integer billableId);
 
-    public Billable getBillableByName(String billableName);
+    Billable getBillableByName(String billableName);
 
-    public void add(Billable bill) ;
+    void add(Billable bill) ;
 
-    public void delete(Integer billableId);
+    void delete(Integer billableId);
 
 }

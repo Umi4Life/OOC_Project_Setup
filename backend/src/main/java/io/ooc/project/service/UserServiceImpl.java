@@ -1,7 +1,7 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
-import io.ooc.project.Model.User;
-import io.ooc.project.Repository.UserRepository;
+import io.ooc.project.model.User;
+import io.ooc.project.repository.UserRepository;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service("userService")
 @Transactional
-public class UserServiceImpl implements UserServiceTest {
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserServiceTest {
     }
 
     @Override
-    public User getuserByName(String userName) {
+    public User getUserByName(String userName) {
         return userRepository.findUserByUserName(userName);
     }
 

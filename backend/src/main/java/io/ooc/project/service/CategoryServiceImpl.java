@@ -1,10 +1,10 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
-import io.ooc.project.Model.Category;
-import io.ooc.project.Repository.BillableRepository;
-import io.ooc.project.Repository.CategoryRepository;
-import io.ooc.project.Repository.ItemRepository;
-import io.ooc.project.Repository.UserRepository;
+import io.ooc.project.model.Category;
+import io.ooc.project.repository.BillableRepository;
+import io.ooc.project.repository.CategoryRepository;
+import io.ooc.project.repository.ItemRepository;
+import io.ooc.project.repository.UserRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service("categoryService")
 @Transactional
-public class CategoryServiceImpl implements CategoryServiceTest {
+public class CategoryServiceImpl implements CategoryService {
 
     private SessionFactory sessionFactory;
 

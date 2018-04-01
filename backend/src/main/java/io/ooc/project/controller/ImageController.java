@@ -1,7 +1,7 @@
-package io.ooc.project.Controller;
+package io.ooc.project.controller;
 
-import io.ooc.project.Model.*;
-import io.ooc.project.Service.*;
+import io.ooc.project.model.*;
+import io.ooc.project.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,10 +20,10 @@ import java.io.IOException;
 public class ImageController {
 
 	@Autowired
-	private CategoryServiceTest categoryService;
+	private CategoryService categoryService;
 
 	@Autowired
-	private ItemServiceTest itemService;
+	private ItemService itemService;
 	
 	private final int DEFAULT_BUFFER_SIZE = 10240;
 	

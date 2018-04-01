@@ -1,10 +1,10 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
 
-import io.ooc.project.Model.Role;
-import io.ooc.project.Model.User;
-import io.ooc.project.Repository.RoleRepository;
-import io.ooc.project.Repository.UserRepository;
+import io.ooc.project.model.Role;
+import io.ooc.project.model.User;
+import io.ooc.project.repository.RoleRepository;
+import io.ooc.project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service("roleService")
 @Transactional
-public class RoleServiceImpl implements RoleServiceTest {
+public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private UserRepository userRepository;

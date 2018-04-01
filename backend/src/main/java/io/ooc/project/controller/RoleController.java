@@ -1,7 +1,7 @@
-package io.ooc.project.Controller;
+package io.ooc.project.controller;
 
-import io.ooc.project.Model.*;
-import io.ooc.project.Service.*;
+import io.ooc.project.model.*;
+import io.ooc.project.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 public class RoleController {
 
 	@Autowired
-	private RoleServiceTest roleService;
+	private RoleService roleService;
 	
 	@RequestMapping(value="/add",method= RequestMethod.GET)
 	public String getAdd(@RequestParam("id")Integer userId, Model model){

@@ -1,10 +1,10 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
-import io.ooc.project.Model.Billable;
-import io.ooc.project.Repository.BillableRepository;
-import io.ooc.project.Repository.CategoryRepository;
-import io.ooc.project.Repository.ItemRepository;
-import io.ooc.project.Repository.UserRepository;
+import io.ooc.project.model.Billable;
+import io.ooc.project.repository.BillableRepository;
+import io.ooc.project.repository.CategoryRepository;
+import io.ooc.project.repository.ItemRepository;
+import io.ooc.project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 @Service("billableService")
 @Transactional
-public class BillableServiceImpl implements BillableServiceInterface {
+public class BillableServiceImpl implements BillableService {
     @Autowired
     private BillableRepository billableRepository;
 

@@ -1,7 +1,7 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
-import io.ooc.project.Model.Role;
-import io.ooc.project.Model.User;
+import io.ooc.project.model.Role;
+import io.ooc.project.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,18 +10,18 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface RoleServiceTest {
+public interface RoleService {
 
-    public List<Role> getAll(Integer userId);
+    List<Role> getAll(Integer userId);
 
-    public List<Role>getAll();
+    List<Role>getAll();
 
-    public Role get(Integer roleId);
+    Role get(Integer roleId);
 
-    public void add(Integer userId,Role role);
+    void add(Integer userId,Role role);
 
-    public void delete(Integer roleId);
+    void delete(Integer roleId);
 
-    public void edit(Role role);
+    void edit(Role role);
 
 }

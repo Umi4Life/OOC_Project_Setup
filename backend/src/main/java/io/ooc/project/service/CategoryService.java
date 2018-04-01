@@ -1,6 +1,6 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
-import io.ooc.project.Model.Category;
+import io.ooc.project.model.Category;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -11,16 +11,16 @@ import java.util.List;
 /**
  * Created by Havensbee on 3/19/18.
  */
-public interface CategoryServiceTest {
-    public List<Category> getAll();
+public interface CategoryService {
+    List<Category> getAll();
 
-    public Category get(Integer categoryId);
+    Category get(Integer categoryId);
 
-    public Category getCategoryByName(String categoryName);
+    Category getCategoryByName(String categoryName);
 
-    public void add(Category category);
+    void add(Category category);
 
-    public void delete(Integer categoryId);
+    void delete(Integer categoryId);
 
-    public void edit(Category category);
+    void edit(Category category);
 }

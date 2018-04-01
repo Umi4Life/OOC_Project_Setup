@@ -1,9 +1,22 @@
 import Vue from 'vue'
-import App from './App'
+import accounting from 'accounting'
+import pluralize from 'pluralize'
+import Shop from './components/shop/Shop'
+import store from './store'
+import Login from './components/Login'
+import BootstrapVue from 'bootstrap-vue'
 
-/* eslint-disable no-new */
+Vue.config.productionTip = false
+
+Vue.filter('formatMoney', accounting.formatMoney)
+Vue.filter('pluralize', pluralize)
+
+Vue.use(BootstrapVue);
+
+
 new Vue({
-  el: '#app',
-  template: '<App/>',
-  components: { App }
+  el: '#shop',
+  store,
+  Login,
+  render: h => h(Shop)
 })

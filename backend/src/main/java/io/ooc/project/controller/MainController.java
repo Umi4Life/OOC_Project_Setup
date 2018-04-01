@@ -1,8 +1,8 @@
-package io.ooc.project.Controller;
+package io.ooc.project.controller;
 
-import io.ooc.project.Dto.*;
-import io.ooc.project.Model.*;
-import io.ooc.project.Service.*;
+import io.ooc.project.dto.*;
+import io.ooc.project.model.*;
+import io.ooc.project.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -24,10 +23,10 @@ import java.util.Set;
 public class MainController {
 
     @Autowired
-	private UserServiceTest userService;
+	private UserService userService;
 
     @Autowired
-	private RoleServiceTest roleService;
+	private RoleService roleService;
 	
 	@RequestMapping(value="/login")
 	public String GetFront(Model model){
@@ -56,7 +55,7 @@ public class MainController {
                                HttpSession session, HttpServletRequest request, Model model){
     	
     	boolean success = userService.validate(userName,password);
-    	User user = userService.getuserByName(userName);
+    	User user = userService.getUserByName(userName);
     	Set<Role> roles = user.getRole();
     	String role = null;
     	

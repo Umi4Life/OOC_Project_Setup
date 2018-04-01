@@ -1,4 +1,4 @@
-package io.ooc.project.Model;
+package io.ooc.project.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

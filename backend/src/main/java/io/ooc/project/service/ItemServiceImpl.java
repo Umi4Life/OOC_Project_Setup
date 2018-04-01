@@ -1,11 +1,11 @@
-package io.ooc.project.Service;
+package io.ooc.project.service;
 
-import io.ooc.project.Model.Category;
-import io.ooc.project.Model.Item;
-import io.ooc.project.Model.User;
-import io.ooc.project.Repository.CategoryRepository;
-import io.ooc.project.Repository.ItemRepository;
-import io.ooc.project.Repository.UserRepository;
+import io.ooc.project.model.Category;
+import io.ooc.project.model.Item;
+import io.ooc.project.model.User;
+import io.ooc.project.repository.CategoryRepository;
+import io.ooc.project.repository.ItemRepository;
+import io.ooc.project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ import java.util.List;
 
 @Service("itemService")
 @Transactional
-public class ItemServiceImpl implements ItemServiceTest {
+public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemRepository itemRepository;
