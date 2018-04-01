@@ -27,7 +27,7 @@ public class MainController {
 
     @Autowired
 	private RoleService roleService;
-	
+
 	@RequestMapping(value="/login")
 	public String GetFront(Model model){
 		return "login";
